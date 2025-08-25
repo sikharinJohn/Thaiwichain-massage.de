@@ -22,40 +22,10 @@
   <meta property="og:image" content="https://www.thaiwichain-massage.de/assets/og-image1.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./dist/output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* =============================
-       GLOBAL CSS
-       - ตัวแปรแบรนด์: --brand / --brand-2
-       - ฟอนต์ & การแอนติอะไลแอส
-       - เลื่อนนุ่ม (scroll-behavior)
-       - สไตล์ Modal แกลเลอรี่
-       - สถานะเมนูที่กำลังแสดง (active)
-       ============================= */
-    :root{--brand:#b08a31;--brand-2:#7a5b1a}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Noto Sans Thai",sans-serif}
-    .glass{backdrop-filter: blur(8px); background:rgba(255,255,255,.7)}
-    .section{scroll-margin-top: 90px}
-    /* Modal เริ่มซ่อนอยู่ (opacity 0 + pointer-events none); เมื่อเปิดจะเพิ่ม .show */
-    #modal {
-      transition: opacity 0.3s;
-      opacity: 0;
-      pointer-events: none;
-    }
-    #modal.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    html{ scroll-behavior:smooth; }            /* เลื่อนนุ่มๆ */
-header nav a.active{ color:var(--brand); } /* ไฮไลต์ลิงก์เมนู */
-header nav a.active::after{
-  content:""; position:absolute; left:0; bottom:-6px; width:100%; height:2px;
-  background:var(--brand); border-radius:1px;
-}
-  </style>
   
   <!-- SEO: Schema.org LocalBusiness (กรุณาตรวจเวลาเปิด-ปิด/URL/รูปอีกครั้งให้ตรงของจริง) -->
 <script type="application/ld+json">
@@ -121,7 +91,7 @@ header nav a.active::after{
        - โลโก้/ชื่อร้าน + เมนูเลื่อนลงส่วนต่างๆ (Anchor)
        - ปุ่ม CTA "Jetzt buchen"
        =============================================================== -->
-<header class="sticky top-0 bg-white/90 backdrop-blur border-b z-40">
+<header class="sticky top-0 bg-white/90 backdrop-blur border-b z-40 border-white">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#" class="text-xl font-semibold tracking-wide"><span class="text-[var(--brand)]">Thai Wichian Massage & Spa Elchingen bei Ulm</span></a>
       <nav class="hidden md:flex gap-6 text-sm">
@@ -198,7 +168,7 @@ header nav a.active::after{
         <p class="text-slate-600 mt-2">Klare Zeiten – faire Preise</p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="rounded-2xl border bg-white p-6">
+        <div class="rounded-2xl border bg-white p-6 border-white">
           <h3 class="font-semibold text-lg">Thai Signaturmassage</h3>
           <ul class="mt-3 space-y-2 text-slate-700">
             <li>60 Minuten – 59 €</li>
@@ -222,7 +192,7 @@ header nav a.active::after{
             <li>60 Minuten – 59 €</li>
           </ul>
         </div>
-        <div class="rounded-2xl border bg-white p-6">
+        <div class="rounded-2xl border bg-white p-6 border-white">
           <h3 class="font-semibold text-lg">Thai Aroma-Ölmassage</h3>
           <ul class="mt-3 space-y-2 text-slate-700">
             <li>60 Minuten – 55 €</li>
@@ -346,9 +316,13 @@ header nav a.active::after{
         <p class="mt-2 text-slate-600">Termine nur nach Vereinbarung</p>
       </div>
       <div>
-        <div class="aspect-video rounded-2xl overflow-hidden border">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.895616684107!2d10.1045816!3d48.458532299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47996927c1875d59%3A0x510162b30b24a91e!2sThai%20Wichian%20Massage%20%26%20Spa!5e0!3m2!1sen!2sde!4v1756035188894!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+        <div class="aspect-video rounded-2xl overflow-hidden border border-white">
+          <iframe
+            class="w-full h-full block"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.895616684107!2d10.1045816!3d48.458532299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47996927c1875d59%3A0x510162b30b24a91e!2sThai%20Wichian%20Massage%20%26%20Spa!5e0!3m2!1sen!2sde!4v1756035188894!5m2!1sen!2sde"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -383,141 +357,17 @@ header nav a.active::after{
         </ul>
       </div>
     </div>
-    <div class="border-t border-slate-800">
+    <div class="border-t border-slate-800 border-white">
       <div class="max-w-6xl mx-auto px-4 py-4 text-xs">© <span id="year"></span> Thai Wichian Massage & Spa Elchingen – Alle Rechte vorbehalten.</div>
     </div>
   </footer>
 
-  <script>
-    // ===== Year & Cookie Consent =====
-    // อัปเดตปีลิขสิทธิ์อัตโนมัติ + จัดการแบนเนอร์คุกกี้
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const bar = document.getElementById('cookiebar');
-    const consent = localStorage.getItem('cookie-consent');
-    if(!consent){ bar.classList.remove('hidden'); }
-    document.getElementById('cookie-accept').addEventListener('click',()=>{
-      localStorage.setItem('cookie-consent','all');
-      bar.classList.add('hidden');
-    });
-    document.getElementById('cookie-decline').addEventListener('click',()=>{
-      localStorage.setItem('cookie-consent','necessary');
-      bar.classList.add('hidden');
-    });
-  </script>
+  
 
-<script>
-/* =============================================================
-   Galerie Slider (one-by-one, auto, loop, keys, touch, modal)
-   - คำนวณความกว้างของภาพแรกเป็นระยะเลื่อน (step)
-   - ปรับขนาดเมื่อ resize
-   - ปุ่ม Prev/Next + Auto-play 4s (หยุดเมื่อ hover)
-   - ปัดนิ้วซ้าย/ขวาได้บนมือถือ
-   - คลิกภาพเพื่อเปิด Modal (กด ESC/คลิกพื้นหลังเพื่อปิด)
-   ============================================================= */
-// ===== Galerie Slider (one-by-one, auto, loop, keys, touch, modal) =====
-const slider  = document.getElementById('slider');
-const track   = document.getElementById('slider-track');
-const slides  = [...track.querySelectorAll('img')];
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
 
-let index = 0;
-let step  = 0;
-let timer = null;
 
-// --- compute step size based on one slide (image width + horizontal margins) ---
-function computeStep(){
-  if (!slides.length) { step = 0; return; }
-  const s = slides[0];
-  const rect = s.getBoundingClientRect();
-  const cs = getComputedStyle(s);
-  const ml = parseFloat(cs.marginLeft)  || 0;
-  const mr = parseFloat(cs.marginRight) || 0;
-  step = rect.width + ml + mr;
-}
 
-// --- apply transform ---
-function update(){
-  track.style.transform = `translateX(-${index * step}px)`;
-}
-
-// --- go prev/next (loop) ---
-function go(i){
-  const max = slides.length;
-  index = (i + max) % max;
-  update();
-}
-
-// --- events ---
-window.addEventListener('resize', ()=>{ computeStep(); update(); });
-prevBtn.addEventListener('click', ()=>go(index - 1));
-nextBtn.addEventListener('click', ()=>go(index + 1));
-
-// autoplay (pause on hover)
-function startAuto(){ if(timer) return; timer = setInterval(()=>go(index+1), 4000); }
-function stopAuto(){ if(!timer) return; clearInterval(timer); timer = null; }
-slider.addEventListener('mouseenter', stopAuto);
-slider.addEventListener('mouseleave', startAuto);
-
-// touch swipe
-let startX = null;
-slider.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; stopAuto(); }, {passive:true});
-slider.addEventListener('touchend', e=>{
-  if(startX === null) return;
-  const dx = e.changedTouches[0].clientX - startX;
-  if(Math.abs(dx) > 50){ dx < 0 ? go(index+1) : go(index-1); }
-  startX = null; startAuto();
-}, {passive:true});
-
-// modal view (click to enlarge)
-const modal    = document.getElementById('modal');
-const modalImg = document.getElementById('modal-img');
-
-slides.forEach(img => {
-  img.addEventListener('click', ()=>{
-    modalImg.src = img.src;
-    modal.classList.add('show');
-  });
-});
-
-// close on click outside / ESC
-function closeModal(){
-  modal.classList.remove('show');
-  setTimeout(()=>{ modalImg.src = ''; }, 200);
-}
-modal.addEventListener('click', e=>{ if(e.target === modal) closeModal(); });
-window.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeModal(); });
-
-// init
-computeStep();
-update();
-startAuto();
-</script>
-
-<script>
-/* =============================================================
-   Smooth Scroll + ScrollSpy
-   - เปิดค่า scroll-behavior: smooth ใน CSS แล้ว
-   - IntersectionObserver ใช้เช็ค section ที่อยู่ใน viewport
-   - เติม/ลบคลาส .active ให้ลิงก์เมนู
-   ============================================================= */
-// Smooth-scroll: แค่มี css ก็พอแล้ว (เราใส่ไว้แล้ว) แต่เพิ่ม ScrollSpy เพื่อไฮไลต์เมนู
-const sections = [...document.querySelectorAll('section[id]')];
-const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
-const linkById = new Map(navLinks.map(a => [a.getAttribute('href'), a]));
-
-const spy = new IntersectionObserver((entries)=>{
-  entries.forEach(en=>{
-    if(en.isIntersecting){
-      navLinks.forEach(a=>a.classList.remove('active'));
-      const link = linkById.get('#'+en.target.id);
-      if(link){ link.classList.add('active'); }
-    }
-  });
-},{ rootMargin:'-60% 0px -35% 0px', threshold:0.01 });
-
-sections.forEach(s=>spy.observe(s));
-</script>
+  <script src="./assets/app.js" defer></script>
 </body>
 </html>
 

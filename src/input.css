@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* ==== Custom CSS ของคุณ (ที่ย้ายมาจาก <style> ใน index.html) ==== */
+:root { --brand:#b08a31; --brand-2:#7a5b1a; }
+html,body { font-family: Inter,system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Cantarell,"Noto Sans","Noto Sans Thai",sans-serif; }
+.glass { backdrop-filter: blur(8px); background: rgba(255,255,255,.7); }
+.section { scroll-margin-top: 90px; }
+.boder { border: 1px solid #e5e7eb; }
+#modal { transition: opacity .3s; opacity: 0; pointer-events: none; }
+#modal.show { opacity: 1; pointer-events: auto; }
+html { scroll-behavior: smooth; }
+header nav a.active { color: var(--brand); }
+header nav a.active::after {
+  content:""; position:absolute; left:0; bottom:-6px; width:100%; height:2px;
+  background: var(--brand); border-radius: 1px;
+}
