@@ -51,8 +51,36 @@
     ]
   }
   </script>
+
+  <!-- Consent Mode v2 default: all denied (security_storage granted) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('consent','default',{
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      analytics_storage:'denied',
+      functionality_storage:'denied',
+      personalization_storage:'denied',
+      security_storage:'granted'
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WHTWRC4W');
+  </script>
+  <!-- End Google Tag Manager -->
+
 </head>
 <body class="antialiased text-slate-800">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHTWRC4W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   
   <!-- ================== Cookie Banner ==================
        - แสดงแถบยินยอมคุกกี้ (จำลอง, ไม่มีการโหลด Analytics จริงจนกว่าจะกด 'Alle akzeptieren')
@@ -369,6 +397,44 @@
 
 
 
+
+  
+  <!-- Update consent on cookie banner actions -->
+  <script>
+    (function(){
+      function grantAll(){
+        gtag('consent','update',{
+          ad_storage:'granted',
+          ad_user_data:'granted',
+          ad_personalization:'granted',
+          analytics_storage:'granted',
+          functionality_storage:'granted',
+          personalization_storage:'granted',
+          security_storage:'granted'
+        });
+      }
+      function denyAll(){
+        gtag('consent','update',{
+          ad_storage:'denied',
+          ad_user_data:'denied',
+          ad_personalization:'denied',
+          analytics_storage:'denied',
+          functionality_storage:'denied',
+          personalization_storage:'denied',
+          security_storage:'granted'
+        });
+      }
+      var consent = null;
+      try { consent = localStorage.getItem('cookie-consent'); } catch(e){}
+      if (consent === 'all') grantAll();
+      if (consent === 'necessary') denyAll();
+
+      var acc = document.getElementById('cookie-accept');
+      var dec = document.getElementById('cookie-decline');
+      if (acc) acc.addEventListener('click', grantAll);
+      if (dec) dec.addEventListener('click', denyAll);
+    })();
+  </script>
 
   <script src="./assets/app.js" defer></script>
 </body>
